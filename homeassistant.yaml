@@ -1,0 +1,19 @@
+---
+version: "2.1"
+services:
+  homeassistant:
+    image: lscr.io/linuxserver/homeassistant:latest
+    container_name: homeassistant
+    network_mode: host
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+    volumes:
+      - /opt/homeassistant/addons:/addons
+      - /opt/homeassistant/backup:/backup
+      - /opt/homeassistant/config:/config
+      - /opt/homeassistant/media:/media
+      - /opt/homeassistant/share:/share
+      - /opt/homeassistant/ssl:/ssl
+    restart: unless-stopped
