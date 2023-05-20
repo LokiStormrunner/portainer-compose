@@ -1,9 +1,8 @@
 ---
 version: "2.1"
 services:
-  homeassistant:
+  app:
     image: lscr.io/linuxserver/homeassistant:latest
-    container_name: homeassistant
     network_mode: host
     environment:
       - PUID=1000

@@ -1,9 +1,8 @@
 ---
 version: "2.1"
 services:
-  resilio-sync:
+  app:
     image: lscr.io/linuxserver/resilio-sync:latest
-    container_name: resilio-sync
     environment:
       - PUID=1000
       - PGID=1000
