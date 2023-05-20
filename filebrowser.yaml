@@ -5,7 +5,7 @@ version: '3.3'
 
 services:
   filebrowser:
-    image: filebrowser/filebrowser:s6
+    image: filebrowser/filebrowser:latest
     environment:
       - PUID=1000
       - PGID=1000
@@ -13,7 +13,7 @@ services:
     volumes:
       - /:/srv
       - /opt/filebrowser/database/filebrowser.db:/database/filebrowser.db
-      - /opt/filebrowser/config/settings.json:/config/settings.json
+      - /opt/filebrowser/config:/config
     ports:
       - 8081:80  # <Host Port>:<Container Port>
     restart: unless-stopped
