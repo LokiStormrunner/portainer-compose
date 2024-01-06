@@ -16,3 +16,8 @@ services:
       - 8888:8888
       - 55555:55555
     restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "200k"
+        max-file: "10"
